@@ -38,6 +38,8 @@
             trainTextBox = new TextBox();
             label4 = new Label();
             button2 = new Button();
+            label2 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -63,9 +65,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 156);
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(37, 145);
             label1.Name = "label1";
-            label1.Size = new Size(126, 25);
+            label1.Size = new Size(210, 41);
             label1.TabIndex = 3;
             label1.Text = "Departure City";
             // 
@@ -91,9 +94,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(346, 156);
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(346, 145);
             label3.Name = "label3";
-            label3.Size = new Size(62, 25);
+            label3.Size = new Size(100, 41);
             label3.TabIndex = 7;
             label3.Text = "Arrival";
             label3.Click += label3_Click;
@@ -108,21 +112,44 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(657, 155);
+            label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(647, 145);
             label4.Name = "label4";
-            label4.Size = new Size(48, 25);
+            label4.Size = new Size(80, 41);
             label4.TabIndex = 9;
             label4.Text = "Train";
+            label4.Click += label4_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(887, 145);
+            button2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(871, 162);
             button2.Name = "button2";
-            button2.Size = new Size(197, 79);
+            button2.Size = new Size(197, 66);
             button2.TabIndex = 11;
             button2.Text = "Close tab";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Palatino Linotype", 19F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(37, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(2017, 51);
+            label2.TabIndex = 12;
+            label2.Text = "Enter the departure, the destinatiuon and the type of train you want to ride. Then input the given ID into the other form";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(1185, 193);
+            label5.Name = "label5";
+            label5.Size = new Size(282, 41);
+            label5.TabIndex = 13;
+            label5.Text = "Map of the stations:";
             // 
             // Form_2
             // 
@@ -130,6 +157,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 200, 234);
             ClientSize = new Size(2124, 1149);
+            Controls.Add(label5);
+            Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(trainTextBox);
@@ -153,7 +182,6 @@
         private TextBox departureTextBox;
         private TextBox Filter_TextBox;
         private Label label1;
-        private Label label2;
         private PictureBox pictureBox1;
         private TextBox arrivalTextBox;
         private Label label3;
@@ -161,5 +189,7 @@
         private Label label4;
         private Button button1;
         private Button button2;
+        private Label label2;
+        private Label label5;
     }
 }
