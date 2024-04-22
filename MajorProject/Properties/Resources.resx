@@ -121,4 +121,10 @@
   <data name="eye-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\eye-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="x2sxnv1ogieb1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x2sxnv1ogieb1 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

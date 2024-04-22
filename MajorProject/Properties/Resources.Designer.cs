@@ -69,5 +69,15 @@ namespace MajorProject.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x2sxnv1ogieb1__1_ {
+            get {
+                object obj = ResourceManager.GetObject("x2sxnv1ogieb1 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
