@@ -28,43 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_2));
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            Column_TextBox = new TextBox();
+            Filter_TextBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(54, 153);
+            dataGridView1.Location = new Point(46, 243);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(667, 385);
+            dataGridView1.Size = new Size(993, 885);
             dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // Column_TextBox
             // 
-            textBox1.Location = new Point(36, 62);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(417, 31);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            Column_TextBox.Location = new Point(64, 184);
+            Column_TextBox.Name = "Column_TextBox";
+            Column_TextBox.Size = new Size(417, 31);
+            Column_TextBox.TabIndex = 1;
+            Column_TextBox.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // Filter_TextBox
             // 
-            textBox2.Location = new Point(497, 62);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(246, 31);
-            textBox2.TabIndex = 2;
+            Filter_TextBox.Location = new Point(549, 184);
+            Filter_TextBox.Name = "Filter_TextBox";
+            Filter_TextBox.Size = new Size(246, 31);
+            Filter_TextBox.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(116, 25);
+            label1.Location = new Point(102, 133);
             label1.Name = "label1";
             label1.Size = new Size(136, 25);
             label1.TabIndex = 3;
@@ -73,25 +76,41 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(604, 25);
+            label2.Location = new Point(581, 133);
             label2.Name = "label2";
             label2.Size = new Size(107, 25);
             label2.TabIndex = 4;
             label2.Text = "Choose row";
+            label2.Click += label2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.x2sxnv1ogieb1__1_;
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(1074, 243);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(916, 885);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Form_2
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2240, 1043);
+            BackColor = Color.LightCyan;
+            ClientSize = new Size(2031, 1149);
+            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(Filter_TextBox);
+            Controls.Add(Column_TextBox);
             Controls.Add(dataGridView1);
             Name = "Form_2";
             Text = "Form_2";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -99,9 +118,10 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox Column_TextBox;
+        private TextBox Filter_TextBox;
         private Label label1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }
