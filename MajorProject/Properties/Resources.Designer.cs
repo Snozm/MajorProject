@@ -65,7 +65,7 @@ namespace MajorProject.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap eye_outline {
             get {
-                object obj = ResourceManager.GetObject("eye-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("eye_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
