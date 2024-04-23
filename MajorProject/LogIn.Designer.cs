@@ -38,20 +38,21 @@
             registerButton = new Button();
             showPasswordPictureBox = new PictureBox();
             showRepeatPasswordPictureBox = new PictureBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)showPasswordPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)showRepeatPasswordPictureBox).BeginInit();
             SuspendLayout();
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(90, 84);
+            emailTextBox.Location = new Point(233, 150);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(264, 31);
             emailTextBox.TabIndex = 0;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(90, 183);
+            passwordTextBox.Location = new Point(233, 249);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(264, 31);
             passwordTextBox.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             // repeatPasswordTextBox
             // 
-            repeatPasswordTextBox.Location = new Point(90, 278);
+            repeatPasswordTextBox.Location = new Point(233, 344);
             repeatPasswordTextBox.Name = "repeatPasswordTextBox";
             repeatPasswordTextBox.Size = new Size(264, 31);
             repeatPasswordTextBox.TabIndex = 2;
@@ -68,7 +69,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(90, 46);
+            label1.Location = new Point(233, 112);
             label1.Name = "label1";
             label1.Size = new Size(140, 25);
             label1.TabIndex = 3;
@@ -77,7 +78,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(90, 142);
+            label2.Location = new Point(233, 208);
             label2.Name = "label2";
             label2.Size = new Size(175, 25);
             label2.TabIndex = 4;
@@ -86,7 +87,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(90, 238);
+            label3.Location = new Point(233, 304);
             label3.Name = "label3";
             label3.Size = new Size(189, 25);
             label3.TabIndex = 5;
@@ -94,26 +95,28 @@
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(261, 351);
+            loginButton.Location = new Point(233, 416);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(112, 34);
             loginButton.TabIndex = 6;
             loginButton.Text = "Log In";
             loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
             // registerButton
             // 
-            registerButton.Location = new Point(440, 351);
+            registerButton.Location = new Point(412, 416);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(112, 34);
             registerButton.TabIndex = 7;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = true;
+            registerButton.Click += registerButton_Click;
             // 
             // showPasswordPictureBox
             // 
             showPasswordPictureBox.Image = Properties.Resources.eye_outline;
-            showPasswordPictureBox.Location = new Point(351, 183);
+            showPasswordPictureBox.Location = new Point(494, 249);
             showPasswordPictureBox.Name = "showPasswordPictureBox";
             showPasswordPictureBox.Size = new Size(32, 31);
             showPasswordPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,7 +127,7 @@
             // showRepeatPasswordPictureBox
             // 
             showRepeatPasswordPictureBox.Image = Properties.Resources.eye_outline;
-            showRepeatPasswordPictureBox.Location = new Point(351, 278);
+            showRepeatPasswordPictureBox.Location = new Point(494, 344);
             showRepeatPasswordPictureBox.Name = "showRepeatPasswordPictureBox";
             showRepeatPasswordPictureBox.Size = new Size(32, 31);
             showRepeatPasswordPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,11 +135,22 @@
             showRepeatPasswordPictureBox.TabStop = false;
             showRepeatPasswordPictureBox.Click += showRepeatPasswordPictureBox_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(221, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(315, 51);
+            label4.TabIndex = 10;
+            label4.Text = "Log in or Register";
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(793, 552);
+            Controls.Add(label4);
             Controls.Add(showRepeatPasswordPictureBox);
             Controls.Add(showPasswordPictureBox);
             Controls.Add(registerButton);
@@ -167,5 +181,6 @@
         private Button registerButton;
         private PictureBox showPasswordPictureBox;
         private PictureBox showRepeatPasswordPictureBox;
+        private Label label4;
     }
 }

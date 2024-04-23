@@ -19,10 +19,20 @@ namespace MajorProject
 
         private void showPasswordPictureBox_Click(object sender, EventArgs e)
         {
-
+            passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
         }
 
         private void showRepeatPasswordPictureBox_Click(object sender, EventArgs e)
+        {
+            repeatPasswordTextBox.UseSystemPasswordChar = !repeatPasswordTextBox.UseSystemPasswordChar;
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
         {
 
         }
