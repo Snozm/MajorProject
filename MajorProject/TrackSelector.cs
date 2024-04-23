@@ -12,8 +12,8 @@ using System.Data.SqlClient;
 
 namespace MajorProject
 {
-    
-    public partial class Form_2 : Form
+
+    public partial class TrackDesigner : Form
     {
         DataTable resultTable = new DataTable();
         public Form_2()
@@ -58,14 +58,14 @@ namespace MajorProject
             SqlCommand cmd = new SqlCommand("select * from Tracks", con);
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = cmd;
-             resultTable = new DataTable();
+            resultTable = new DataTable();
             adapter.Fill(resultTable);
             dataGridView.DataSource = resultTable;
         }
 
         private void departureTextBox_Leave(object sender, EventArgs e)
         {
-           
+
             using (SqlConnection con = new SqlConnection((@"Data Source = LAB108PC17\SQLEXPRESS; Initial Catalog = LoginHash; Integrated Security = True")))
             {
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Login' AND COLUMN_NAME = Departure ", con);
@@ -74,8 +74,8 @@ namespace MajorProject
                 dataGridView.DataSource = resultTable;
                 con.Open();
             }
-           
+
         }
     }
-    }
 }
+
