@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_2));
-            dataGridView1 = new DataGridView();
+            dataGridView = new DataGridView();
             departureTextBox = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -37,22 +37,22 @@
             label3 = new Label();
             trainTextBox = new TextBox();
             label4 = new Label();
-            button2 = new Button();
+            closeTabButton = new Button();
             label2 = new Label();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(46, 243);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1058, 885);
-            dataGridView1.TabIndex = 0;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Location = new Point(46, 243);
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersWidth = 62;
+            dataGridView.RowTemplate.Height = 33;
+            dataGridView.Size = new Size(1058, 885);
+            dataGridView.TabIndex = 0;
             // 
             // departureTextBox
             // 
@@ -61,6 +61,7 @@
             departureTextBox.Size = new Size(262, 31);
             departureTextBox.TabIndex = 1;
             departureTextBox.TextChanged += textBox1_TextChanged;
+            departureTextBox.Leave += departureTextBox_Leave;
             // 
             // label1
             // 
@@ -113,23 +114,23 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(647, 145);
+            label4.Location = new Point(629, 135);
             label4.Name = "label4";
-            label4.Size = new Size(80, 41);
+            label4.Size = new Size(261, 41);
             label4.TabIndex = 9;
-            label4.Text = "Train";
+            label4.Text = "Number of Tickets";
             label4.Click += label4_Click;
             // 
-            // button2
+            // closeTabButton
             // 
-            button2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(871, 162);
-            button2.Name = "button2";
-            button2.Size = new Size(197, 66);
-            button2.TabIndex = 11;
-            button2.Text = "Close tab";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            closeTabButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            closeTabButton.Location = new Point(907, 170);
+            closeTabButton.Name = "closeTabButton";
+            closeTabButton.Size = new Size(197, 66);
+            closeTabButton.TabIndex = 11;
+            closeTabButton.Text = "Close tab";
+            closeTabButton.UseVisualStyleBackColor = true;
+            closeTabButton.Click += button2_Click;
             // 
             // label2
             // 
@@ -137,9 +138,9 @@
             label2.Font = new Font("Palatino Linotype", 19F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(37, 46);
             label2.Name = "label2";
-            label2.Size = new Size(2017, 51);
+            label2.Size = new Size(2080, 51);
             label2.TabIndex = 12;
-            label2.Text = "Enter the departure, the destinatiuon and the type of train you want to ride. Then input the given ID into the other form";
+            label2.Text = "Enter the departure, the destination and the number of tickets you want to ride. Then input the given ID into the other form";
             // 
             // label5
             // 
@@ -159,7 +160,7 @@
             ClientSize = new Size(2124, 1149);
             Controls.Add(label5);
             Controls.Add(label2);
-            Controls.Add(button2);
+            Controls.Add(closeTabButton);
             Controls.Add(label4);
             Controls.Add(trainTextBox);
             Controls.Add(label3);
@@ -167,10 +168,11 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(departureTextBox);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView);
             Name = "Form_2";
             Text = "Form_2";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Form_2_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -178,7 +180,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView;
         private TextBox departureTextBox;
         private TextBox Filter_TextBox;
         private Label label1;
@@ -188,7 +190,7 @@
         private TextBox trainTextBox;
         private Label label4;
         private Button button1;
-        private Button button2;
+        private Button closeTabButton;
         private Label label2;
         private Label label5;
     }
