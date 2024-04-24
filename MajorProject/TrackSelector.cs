@@ -13,10 +13,10 @@ using System.Data.SqlClient;
 namespace MajorProject
 {
 
-    public partial class TrackDesigner : Form
+    public partial class TrackSelector : Form
     {
         DataTable resultTable = new DataTable();
-        public Form_2()
+        public TrackSelector()
         {
             InitializeComponent();
         }
