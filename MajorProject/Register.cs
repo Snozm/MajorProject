@@ -82,8 +82,8 @@ namespace MajorProject
             }
 
             string salt = DateTime.Now.ToString();
-            string hash = hashPassword($"{passwordTextBox.Text}{salt}");
-            SqlConnection con = new SqlConnection(DatabaseCon.conString);
+            string hash = StaticData.hashPassword($"{passwordTextBox.Text}{salt}");
+            SqlConnection con = new SqlConnection(StaticData.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email=@email", con);
             cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
@@ -112,25 +112,10 @@ namespace MajorProject
             password = passwordTextBox.Text;
             this.Close();
         }
-        private string hashPassword(string password)
-        {
-            SHA256 hashAlgorithm = SHA256.Create();
-            var bytes = Encoding.Default.GetBytes(password);
-            var hash = hashAlgorithm.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
 
         private void selectImageButton_Click(object sender, EventArgs e)
         {
             LoadImage();
-        }
-        private byte[] ImageToByteArray(Image picture)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                picture.Save(ms, picture.RawFormat);
-                return ms.ToArray();
-            }
         }
 
         private void LoadImage()
@@ -143,7 +128,7 @@ namespace MajorProject
                 {
                     string picturePath = openFileDialog.FileName;
                     Image selectedPicture = Image.FromFile(picturePath);
-                    pictureData = ImageToByteArray(selectedPicture);
+                    pictureData = StaticData.ImageToByteArray(selectedPicture);
                     avatarPictureBox.Image = selectedPicture;
                     selectImageButton.Visible = false;
                     changeImageButton.Visible = true;

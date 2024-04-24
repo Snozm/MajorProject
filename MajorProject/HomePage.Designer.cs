@@ -36,6 +36,8 @@
             loginButton = new Button();
             label3 = new Label();
             registerButton = new Button();
+            showPasswordPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)showPasswordPictureBox).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -65,6 +67,7 @@
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(186, 23);
             passwordTextBox.TabIndex = 27;
+            passwordTextBox.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -94,6 +97,7 @@
             loginButton.TabIndex = 29;
             loginButton.Text = "Log In";
             loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
             // label3
             // 
@@ -114,11 +118,24 @@
             registerButton.UseVisualStyleBackColor = true;
             registerButton.Click += registerButton_Click;
             // 
+            // showPasswordPictureBox
+            // 
+            showPasswordPictureBox.Image = Properties.Resources.eye_outline;
+            showPasswordPictureBox.Location = new Point(477, 207);
+            showPasswordPictureBox.Margin = new Padding(2);
+            showPasswordPictureBox.Name = "showPasswordPictureBox";
+            showPasswordPictureBox.Size = new Size(22, 23);
+            showPasswordPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            showPasswordPictureBox.TabIndex = 32;
+            showPasswordPictureBox.TabStop = false;
+            showPasswordPictureBox.Click += showPasswordPictureBox_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(showPasswordPictureBox);
             Controls.Add(registerButton);
             Controls.Add(label3);
             Controls.Add(loginButton);
@@ -129,6 +146,8 @@
             Controls.Add(label1);
             Name = "HomePage";
             Text = "Home Page";
+            Activated += HomePage_Activated;
+            ((System.ComponentModel.ISupportInitialize)showPasswordPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +162,6 @@
         private Button loginButton;
         private Label label3;
         private Button registerButton;
+        private PictureBox showPasswordPictureBox;
     }
 }
