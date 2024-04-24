@@ -63,6 +63,16 @@ namespace MajorProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_crossed_out {
+            get {
+                object obj = ResourceManager.GetObject("eye_crossed_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_outline {
             get {
                 object obj = ResourceManager.GetObject("eye_outline", resourceCulture);

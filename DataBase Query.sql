@@ -1,4 +1,5 @@
 create database RailwaysProject
+use RailwaysProject
 
 create table Users(
 Email nvarchar(50) primary key not null,
