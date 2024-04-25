@@ -39,28 +39,30 @@
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new Point(72, 122);
+            firstNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            firstNameLabel.Location = new Point(39, 119);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(101, 25);
+            firstNameLabel.Size = new Size(144, 32);
             firstNameLabel.TabIndex = 0;
             firstNameLabel.Text = "First Name:";
             // 
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new Point(72, 177);
+            lastNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lastNameLabel.Location = new Point(43, 177);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(99, 25);
+            lastNameLabel.Size = new Size(140, 32);
             lastNameLabel.TabIndex = 1;
             lastNameLabel.Text = "Last Name:";
             // 
             // travelerInformationLabel
             // 
             travelerInformationLabel.AutoSize = true;
-            travelerInformationLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            travelerInformationLabel.Location = new Point(83, 32);
+            travelerInformationLabel.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            travelerInformationLabel.Location = new Point(143, 35);
             travelerInformationLabel.Name = "travelerInformationLabel";
-            travelerInformationLabel.Size = new Size(288, 38);
+            travelerInformationLabel.Size = new Size(348, 34);
             travelerInformationLabel.TabIndex = 2;
             travelerInformationLabel.Text = "Traveler Information";
             // 
@@ -68,7 +70,7 @@
             // 
             firstNameTextBox.Location = new Point(221, 119);
             firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(150, 31);
+            firstNameTextBox.Size = new Size(308, 31);
             firstNameTextBox.TabIndex = 3;
             firstNameTextBox.TextChanged += firstNameTextBox_TextChanged;
             // 
@@ -76,25 +78,29 @@
             // 
             lastNameTextBox.Location = new Point(221, 177);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(150, 31);
+            lastNameTextBox.Size = new Size(308, 31);
             lastNameTextBox.TabIndex = 4;
             lastNameTextBox.TextChanged += lastNameTextBox_TextChanged;
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(166, 232);
+            saveButton.BackColor = Color.CadetBlue;
+            saveButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            saveButton.ForeColor = SystemColors.ButtonHighlight;
+            saveButton.Location = new Point(221, 234);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(112, 34);
+            saveButton.Size = new Size(308, 49);
             saveButton.TabIndex = 5;
             saveButton.Text = "Save";
-            saveButton.UseVisualStyleBackColor = true;
+            saveButton.UseVisualStyleBackColor = false;
             saveButton.Click += saveButton_Click;
             // 
             // UserBookingInformation
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(463, 292);
+            BackColor = Color.PowderBlue;
+            ClientSize = new Size(628, 307);
             Controls.Add(saveButton);
             Controls.Add(lastNameTextBox);
             Controls.Add(firstNameTextBox);

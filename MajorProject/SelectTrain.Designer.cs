@@ -44,12 +44,15 @@
             // 
             // classGroupBox
             // 
+            classGroupBox.BackColor = Color.CadetBlue;
             classGroupBox.Controls.Add(economyClassRadioButton);
             classGroupBox.Controls.Add(secondClassRadioButton);
             classGroupBox.Controls.Add(firstClassRadioButton);
-            classGroupBox.Location = new Point(33, 276);
+            classGroupBox.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            classGroupBox.ForeColor = SystemColors.InfoText;
+            classGroupBox.Location = new Point(12, 305);
             classGroupBox.Name = "classGroupBox";
-            classGroupBox.Size = new Size(732, 83);
+            classGroupBox.Size = new Size(767, 93);
             classGroupBox.TabIndex = 0;
             classGroupBox.TabStop = false;
             classGroupBox.Text = "Class";
@@ -60,7 +63,7 @@
             economyClassRadioButton.AutoSize = true;
             economyClassRadioButton.Location = new Point(547, 39);
             economyClassRadioButton.Name = "economyClassRadioButton";
-            economyClassRadioButton.Size = new Size(156, 29);
+            economyClassRadioButton.Size = new Size(190, 34);
             economyClassRadioButton.TabIndex = 2;
             economyClassRadioButton.TabStop = true;
             economyClassRadioButton.Text = "Economy Class";
@@ -70,9 +73,9 @@
             // secondClassRadioButton
             // 
             secondClassRadioButton.AutoSize = true;
-            secondClassRadioButton.Location = new Point(300, 39);
+            secondClassRadioButton.Location = new Point(296, 39);
             secondClassRadioButton.Name = "secondClassRadioButton";
-            secondClassRadioButton.Size = new Size(113, 29);
+            secondClassRadioButton.Size = new Size(136, 34);
             secondClassRadioButton.TabIndex = 1;
             secondClassRadioButton.TabStop = true;
             secondClassRadioButton.Text = "2nd Class";
@@ -84,7 +87,7 @@
             firstClassRadioButton.AutoSize = true;
             firstClassRadioButton.Location = new Point(25, 39);
             firstClassRadioButton.Name = "firstClassRadioButton";
-            firstClassRadioButton.Size = new Size(106, 29);
+            firstClassRadioButton.Size = new Size(128, 34);
             firstClassRadioButton.TabIndex = 0;
             firstClassRadioButton.TabStop = true;
             firstClassRadioButton.Text = "1st Class";
@@ -94,15 +97,16 @@
             // numberOfTicketsLabel
             // 
             numberOfTicketsLabel.AutoSize = true;
-            numberOfTicketsLabel.Location = new Point(33, 205);
+            numberOfTicketsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            numberOfTicketsLabel.Location = new Point(12, 205);
             numberOfTicketsLabel.Name = "numberOfTicketsLabel";
-            numberOfTicketsLabel.Size = new Size(161, 25);
+            numberOfTicketsLabel.Size = new Size(232, 32);
             numberOfTicketsLabel.TabIndex = 1;
             numberOfTicketsLabel.Text = "Number of Tickets:";
             // 
             // numberOfTicketsTextBox
             // 
-            numberOfTicketsTextBox.Location = new Point(224, 205);
+            numberOfTicketsTextBox.Location = new Point(264, 208);
             numberOfTicketsTextBox.Name = "numberOfTicketsTextBox";
             numberOfTicketsTextBox.Size = new Size(150, 31);
             numberOfTicketsTextBox.TabIndex = 2;
@@ -110,7 +114,7 @@
             // 
             // trackIDTextBox
             // 
-            trackIDTextBox.Location = new Point(224, 134);
+            trackIDTextBox.Location = new Point(264, 137);
             trackIDTextBox.Name = "trackIDTextBox";
             trackIDTextBox.Size = new Size(150, 31);
             trackIDTextBox.TabIndex = 3;
@@ -119,9 +123,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 134);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(130, 137);
             label1.Name = "label1";
-            label1.Size = new Size(78, 25);
+            label1.Size = new Size(114, 32);
             label1.TabIndex = 4;
             label1.Text = "Track ID:";
             label1.Click += label1_Click;
@@ -129,37 +134,45 @@
             // bookLabel
             // 
             bookLabel.AutoSize = true;
-            bookLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            bookLabel.Location = new Point(261, 34);
+            bookLabel.Font = new Font("Verdana", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            bookLabel.Location = new Point(182, 37);
             bookLabel.Name = "bookLabel";
-            bookLabel.Size = new Size(257, 38);
+            bookLabel.Size = new Size(437, 48);
             bookLabel.TabIndex = 5;
             bookLabel.Text = "Book Train Tickets";
+            bookLabel.Click += bookLabel_Click;
             // 
             // searchTracksButton
             // 
+            searchTracksButton.BackColor = Color.DarkSlateGray;
+            searchTracksButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            searchTracksButton.ForeColor = SystemColors.ButtonHighlight;
             searchTracksButton.Location = new Point(517, 134);
             searchTracksButton.Name = "searchTracksButton";
             searchTracksButton.Size = new Size(183, 102);
             searchTracksButton.TabIndex = 7;
             searchTracksButton.Text = "Search Tracks";
-            searchTracksButton.UseVisualStyleBackColor = true;
+            searchTracksButton.UseVisualStyleBackColor = false;
             searchTracksButton.Click += searchTracksButton_Click;
             // 
             // bookTicketsButton
             // 
-            bookTicketsButton.Location = new Point(312, 431);
+            bookTicketsButton.BackColor = Color.DarkSlateGray;
+            bookTicketsButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bookTicketsButton.ForeColor = SystemColors.ButtonHighlight;
+            bookTicketsButton.Location = new Point(3, 449);
             bookTicketsButton.Name = "bookTicketsButton";
-            bookTicketsButton.Size = new Size(171, 87);
+            bookTicketsButton.Size = new Size(776, 57);
             bookTicketsButton.TabIndex = 8;
             bookTicketsButton.Text = "Book Tickets";
-            bookTicketsButton.UseVisualStyleBackColor = true;
+            bookTicketsButton.UseVisualStyleBackColor = false;
             bookTicketsButton.Click += bookTicketsButton_Click;
             // 
             // SelectTrain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.PowderBlue;
             ClientSize = new Size(800, 566);
             Controls.Add(bookTicketsButton);
             Controls.Add(searchTracksButton);
