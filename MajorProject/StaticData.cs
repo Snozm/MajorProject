@@ -9,7 +9,7 @@ namespace MajorProject
 {
     internal class StaticData
     {
-        private static string server = @"IDEAPAD-SNOZM";
+        private static string server = @"LAPTOP-61I2ACB0";
         public static string conString = @"Data Source=" + server + @"; Initial Catalog=RailwaysProject; Integrated Security=True;";
         public static string hashPassword(string password)
         {
