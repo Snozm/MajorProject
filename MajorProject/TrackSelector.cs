@@ -21,39 +21,12 @@ namespace MajorProject
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form_2_Load(object sender, EventArgs e)
         {
-            /*
+
             SqlConnection con = new SqlConnection(StaticData.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from Tracks", con);
@@ -61,22 +34,61 @@ namespace MajorProject
             adapter.SelectCommand = cmd;
             resultTable = new DataTable();
             adapter.Fill(resultTable);
-            dataGridView.DataSource = resultTable;*/
+            dataGridView.DataSource = resultTable;
         }
 
-        private void departureTextBox_Leave(object sender, EventArgs e)
-        {/*
+        private void departureTrainBox_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(StaticData.conString);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = Departure ", con);
+            DataView dv = resultTable.DefaultView;
+            dv.RowFilter = $"Departure LIKE '%{departureTextBox.Text}%'";
+            dataGridView.DataSource = resultTable;
+            con.Open();
+            if (dataGridView.Rows.Count == 1)
 
-            using (SqlConnection con = new SqlConnection(StaticData.conString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Login' AND COLUMN_NAME = Departure ", con);
-                DataView dv = resultTable.DefaultView;
-                dv.RowFilter = $"Departure LIKE '%{departureTextBox.Text}%'";
-                dataGridView.DataSource = resultTable;
-                con.Open();
+                MessageBox.Show("You there is no city with the given departure city");
             }
-            */
         }
+
+        private void arrivalTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(StaticData.conString);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = Arrival ", con);
+            DataView dv = resultTable.DefaultView;
+            dv.RowFilter = $"Arrival LIKE '%{departureTextBox.Text}%'";
+            dataGridView.DataSource = resultTable;
+            con.Open();
+
+            if (dataGridView.Rows.Count == 1)
+            {
+                MessageBox.Show("You there is no city with the given arrival city");
+            }
+        }
+
+        private void numberTicketsBox_TextChanged(object sender, EventArgs e)
+        {
+
+
+            int numberTick = 0;
+            int.TryParse(numberTicketsBox.Text, out numberTick);
+            SqlConnection con = new SqlConnection(StaticData.conString);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = remaining_seats ", con);
+            DataView dv = resultTable.DefaultView;
+            dv.RowFilter = $"remaining_seats > {numberTick}";
+            dataGridView.DataSource = resultTable;
+            con.Open();
+
+            if (dataGridView.Rows.Count == 1)
+
+            {
+                MessageBox.Show("Not enough seats");
+            }
+
+        }
+
+
     }
 }
 
