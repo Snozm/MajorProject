@@ -53,6 +53,7 @@
             classGroupBox.TabIndex = 0;
             classGroupBox.TabStop = false;
             classGroupBox.Text = "Class";
+            classGroupBox.Enter += classGroupBox_Enter;
             // 
             // economyClassRadioButton
             // 
@@ -64,6 +65,7 @@
             economyClassRadioButton.TabStop = true;
             economyClassRadioButton.Text = "Economy Class";
             economyClassRadioButton.UseVisualStyleBackColor = true;
+            economyClassRadioButton.CheckedChanged += economyClassRadioButton_CheckedChanged;
             // 
             // secondClassRadioButton
             // 
@@ -75,6 +77,7 @@
             secondClassRadioButton.TabStop = true;
             secondClassRadioButton.Text = "2nd Class";
             secondClassRadioButton.UseVisualStyleBackColor = true;
+            secondClassRadioButton.CheckedChanged += secondClassRadioButton_CheckedChanged;
             // 
             // firstClassRadioButton
             // 
@@ -86,6 +89,7 @@
             firstClassRadioButton.TabStop = true;
             firstClassRadioButton.Text = "1st Class";
             firstClassRadioButton.UseVisualStyleBackColor = true;
+            firstClassRadioButton.CheckedChanged += firstClassRadioButton_CheckedChanged;
             // 
             // numberOfTicketsLabel
             // 
@@ -102,6 +106,7 @@
             numberOfTicketsTextBox.Name = "numberOfTicketsTextBox";
             numberOfTicketsTextBox.Size = new Size(150, 31);
             numberOfTicketsTextBox.TabIndex = 2;
+            numberOfTicketsTextBox.TextChanged += numberOfTicketsTextBox_TextChanged;
             // 
             // trackIDTextBox
             // 
@@ -109,6 +114,7 @@
             trackIDTextBox.Name = "trackIDTextBox";
             trackIDTextBox.Size = new Size(150, 31);
             trackIDTextBox.TabIndex = 3;
+            trackIDTextBox.TextChanged += trackIDTextBox_TextChanged;
             // 
             // label1
             // 
@@ -138,6 +144,7 @@
             searchTracksButton.TabIndex = 7;
             searchTracksButton.Text = "Search Tracks";
             searchTracksButton.UseVisualStyleBackColor = true;
+            searchTracksButton.Click += searchTracksButton_Click;
             // 
             // bookTicketsButton
             // 

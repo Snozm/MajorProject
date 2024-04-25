@@ -78,6 +78,7 @@
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(150, 31);
             lastNameTextBox.TabIndex = 4;
+            lastNameTextBox.TextChanged += lastNameTextBox_TextChanged;
             // 
             // saveButton
             // 
@@ -87,6 +88,7 @@
             saveButton.TabIndex = 5;
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // UserBookingInformation
             // 
