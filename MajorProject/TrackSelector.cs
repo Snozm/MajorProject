@@ -41,13 +41,12 @@ namespace MajorProject
         {
             SqlConnection con = new SqlConnection(StaticData.conString);
             SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = Departure ", con);
-            SqlCommand cmd1 = new SqlCommand("SELECT WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = Departure ", con);
             DataView dv = resultTable.DefaultView;
             dv.RowFilter = $"Departure LIKE '%{departureTextBox.Text}%'";
             dataGridView.DataSource = resultTable;
             con.Open();
-
-            if (resultTable.Rows[0]["Departure"].ToString() == "")
+            if (dataGridView.Rows.Count==1)
+       
             {
                 MessageBox.Show("You there is no city with the given departure city");
             }
@@ -62,7 +61,7 @@ namespace MajorProject
             dataGridView.DataSource = resultTable;
             con.Open();
 
-            if (dataGridView == null)
+            if (dataGridView.Rows.Count == 1)
             {
                 MessageBox.Show("You there is no city with the given arrival city");
             }
@@ -81,9 +80,10 @@ namespace MajorProject
             dataGridView.DataSource = resultTable;
             con.Open();
 
-            if (dataGridView == null)
+            if (dataGridView.Rows.Count == 1)
+
             {
-                MessageBox.Show("Not enough seats!");
+                MessageBox.Show("Not enough seats");
             }
 
         }
