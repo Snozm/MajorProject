@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackSelector));
             dataGridView = new DataGridView();
             departureTextBox = new TextBox();
             label1 = new Label();
@@ -73,11 +74,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.x2sxnv1ogieb1__1_;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(1540, 107);
+            pictureBox1.Location = new Point(1538, 302);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(927, 948);
+            pictureBox1.Size = new Size(927, 584);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;

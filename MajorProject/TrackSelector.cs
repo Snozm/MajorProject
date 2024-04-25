@@ -45,8 +45,8 @@ namespace MajorProject
             dv.RowFilter = $"Departure LIKE '%{departureTextBox.Text}%'";
             dataGridView.DataSource = resultTable;
             con.Open();
-            if (dataGridView.Rows.Count==1)
-       
+            if (dataGridView.Rows.Count == 1)
+
             {
                 MessageBox.Show("You there is no city with the given departure city");
             }
