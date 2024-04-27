@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace MajorProject
         }
 
 
-
+        int numberTickets = 0;
 
         private void trackIDTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -42,7 +43,7 @@ namespace MajorProject
             if (!string.IsNullOrEmpty(numberOfTicketsTextBox.Text))
             {
 
-                if (!int.TryParse(numberOfTicketsTextBox.Text, out int number))
+                if (!int.TryParse(numberOfTicketsTextBox.Text, out int numberTickets))
                 {
 
                     MessageBox.Show("Please enter a valid positive integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,11 +52,47 @@ namespace MajorProject
                 else
                 {
 
-                    if (number <= 0)
+                    if (numberTickets <= 0)
                     {
 
                         MessageBox.Show("Please enter a positive integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         numberOfTicketsTextBox.Clear();
+                    }
+                    else
+                    {
+                        int remainingSeats = 0;
+
+                        int.TryParse(numberOfTicketsTextBox.Text, out numberTickets);
+                        SqlConnection con = new SqlConnection(StaticData.conString);
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT remaining_seats from Tracks where Track_id=@id", con);
+                        cmd.Parameters.AddWithValue("@id", trackIDTextBox.Text);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+
+                            remainingSeats = reader.GetInt32(0);
+
+                            reader.Close();
+
+                        }
+
+                        if (remainingSeats >= numberTickets)
+                        {
+                            MessageBox.Show($"Valid number of tickets, you select {numberTickets} tickets from {remainingSeats} seats left");
+                        }
+                        else
+                        {
+                            MessageBox.Show("You selected more tickets than there are seats left!");
+                            numberTickets = 0;
+                            remainingSeats = 0;
+                            numberOfTicketsTextBox.Text = String.Empty; 
+                            numberOfTicketsTextBox.Focus();
+
+                        }
+
+
                     }
                 }
             }
