@@ -46,35 +46,32 @@ namespace MajorProject
 
             
 
-            // SQL query to insert data into the database
-            string query = "INSERT INTO UserBooking (Tr_ID, Holder_FirstName, Holder_LastName, specifics) VALUES (@TrackID, @FirstName, @LastName, @ClassSeat)";
+            string query = "INSERT INTO Tickets (Tr_ID, Holder_FirstName, Holder_LastName, specifics) VALUES (@TrackID, @FirstName, @LastName, @ClassSeat)";
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(StaticData.conString))
                 {
-                    // Open the connection
                     connection.Open();
 
-                    // Create command with parameters
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Add parameters to the command
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@ClassSeat", classSeat);
                         command.Parameters.AddWithValue("@TrackID", track);
 
-                        // Execute the command
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Data saved successfully.");
-                            // Optionally, you can clear the textboxes after saving
+
                             firstNameTextBox.Clear();
                             lastNameTextBox.Clear();
+                            MessageBox.Show("Succesfully recorded ticket");
                         }
+
+
                         else
                         {
                             MessageBox.Show("Failed to save data.");

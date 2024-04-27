@@ -27,6 +27,7 @@ namespace MajorProject
 
 
         int numberTickets = 0;
+        int remainingSeats = 0;
 
         private void trackIDTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -60,7 +61,7 @@ namespace MajorProject
                     }
                     else
                     {
-                        int remainingSeats = 0;
+                        
 
                         int.TryParse(numberOfTicketsTextBox.Text, out numberTickets);
                         SqlConnection con = new SqlConnection(StaticData.conString);
@@ -126,20 +127,48 @@ namespace MajorProject
 
         private void firstClassRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            selectedClass = firstClassRadioButton.Text;
         }
 
         private void secondClassRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            selectedClass = secondClassRadioButton.Text;
 
         }
 
         private void economyClassRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            selectedClass = economyClassRadioButton.Text;
 
         }
         private void bookTicketsButton_Click(object sender, EventArgs e)
         {
+
+            int.TryParse(numberOfTicketsTextBox.Text, out numberTickets);
+
+         /*   SqlConnection con = new SqlConnection(StaticData.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT remaining_seats from Tracks where Track_id=@id", con);
+            cmd.Parameters.AddWithValue("@id", trackIDTextBox.Text);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                reader.Read();
+
+                remainingSeats = reader.GetInt32(0);
+
+                reader.Close();
+
+            }
+            MessageBox.Show($"{remainingSeats}");
+            MessageBox.Show($"{numberTickets}");
+            int true_remaining_Seats = remainingSeats - numberTickets;
+            MessageBox.Show($"{true_remaining_Seats}");
+          
+            SqlCommand cmd1 = new SqlCommand("UPDATE Tracks set remaining_seats = @true_remaining_seats where Track_id=@id", con);
+            cmd.Parameters.AddWithValue("@id", trackIDTextBox.Text);
+            cmd.Parameters.AddWithValue("@true_remaining_seats", true_remaining_Seats);
+            con.Close(); */
 
             if (!string.IsNullOrEmpty(numberOfTicketsTextBox.Text))
             {
@@ -161,6 +190,8 @@ namespace MajorProject
 
                     MessageBox.Show("Please enter a valid positive integer for the number of tickets.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
             else
             {
