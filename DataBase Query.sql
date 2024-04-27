@@ -24,7 +24,9 @@ Train varchar(MAX),
 Departure varchar(MAX),
 Arrival varchar(MAX),
 Departure_Time DATETIME,
-Arrival_Time DATETIME
+Arrival_Time DATETIME,
+	Capacity int,
+remaining_seats int
 )
 
 create table Tickets(
