@@ -88,7 +88,10 @@ namespace MajorProject
 
         }
 
-
+        private void closeTabButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

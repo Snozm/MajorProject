@@ -15,22 +15,22 @@ namespace MajorProject
     {
         int track;
         string classSeat;
-        public UserBookingInformation(int trackID, string classN)
+        int ticketNo = 1;
+        int totalTickets;
+        string[] firstNames;
+        string[] lastNames;
+        public UserBookingInformation(int trackID, string classN, int tickets)
         {
             track = trackID;
             classSeat = classN;
             InitializeComponent();
+            travelerInformationLabel.Text += $" {ticketNo}";
+            totalTickets = tickets;
+            firstNames = new string[totalTickets];
+            lastNames = new string[totalTickets];
         }
 
-        private void firstNameTextBox_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,16 @@ namespace MajorProject
                 return;
             }
 
-            
+            firstNames[ticketNo - 1] = firstName;
+            lastNames[ticketNo - 1] = lastName;
+            ticketNo++;
+            if (ticketNo <= totalTickets)
+            {
+                travelerInformationLabel.Text = $"Traveler Information {ticketNo}";
+                firstNameTextBox.Clear();
+                lastNameTextBox.Clear();
+                return;
+            }
 
             string query = "INSERT INTO Tickets (Tr_ID, Holder_FirstName, Holder_LastName, specifics) VALUES (@TrackID, @FirstName, @LastName, @ClassSeat)";
 
@@ -56,33 +65,29 @@ namespace MajorProject
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@FirstName", firstName);
-                        command.Parameters.AddWithValue("@LastName", lastName);
-                        command.Parameters.AddWithValue("@ClassSeat", classSeat);
-                        command.Parameters.AddWithValue("@TrackID", track);
-
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        for (int i = 0; i < totalTickets; i++)
                         {
+                            command.Parameters.Clear();
+                            command.Parameters.AddWithValue("@FirstName", firstNames[i]);
+                            command.Parameters.AddWithValue("@LastName", lastNames[i]);
+                            command.Parameters.AddWithValue("@ClassSeat", classSeat);
+                            command.Parameters.AddWithValue("@TrackID", track);
 
-                            firstNameTextBox.Clear();
-                            lastNameTextBox.Clear();
-                            MessageBox.Show("Succesfully recorded ticket");
-                        }
-
-
-                        else
-                        {
-                            MessageBox.Show("Failed to save data.");
+                            command.ExecuteNonQuery();
                         }
                     }
                 }
+                MessageBox.Show("Names have been successfully recorded.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
