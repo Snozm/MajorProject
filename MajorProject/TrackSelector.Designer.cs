@@ -47,18 +47,20 @@
             // dataGridView
             // 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(46, 243);
+            dataGridView.Location = new Point(32, 146);
+            dataGridView.Margin = new Padding(2, 2, 2, 2);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 62;
             dataGridView.RowTemplate.Height = 33;
-            dataGridView.Size = new Size(1422, 885);
+            dataGridView.Size = new Size(995, 531);
             dataGridView.TabIndex = 0;
             // 
             // departureTextBox
             // 
-            departureTextBox.Location = new Point(46, 193);
+            departureTextBox.Location = new Point(32, 116);
+            departureTextBox.Margin = new Padding(2, 2, 2, 2);
             departureTextBox.Name = "departureTextBox";
-            departureTextBox.Size = new Size(263, 31);
+            departureTextBox.Size = new Size(185, 23);
             departureTextBox.TabIndex = 1;
             departureTextBox.TextChanged += departureTrainBox_TextChanged;
             // 
@@ -66,9 +68,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(37, 145);
+            label1.Location = new Point(26, 87);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(210, 41);
+            label1.Size = new Size(139, 28);
             label1.TabIndex = 3;
             label1.Text = "Departure City";
             // 
@@ -76,18 +79,20 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(1538, 302);
+            pictureBox1.Location = new Point(1077, 181);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(927, 584);
+            pictureBox1.Size = new Size(649, 350);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // arrivalTextBox
             // 
-            arrivalTextBox.Location = new Point(346, 193);
+            arrivalTextBox.Location = new Point(242, 116);
+            arrivalTextBox.Margin = new Padding(2, 2, 2, 2);
             arrivalTextBox.Name = "arrivalTextBox";
-            arrivalTextBox.Size = new Size(285, 31);
+            arrivalTextBox.Size = new Size(201, 23);
             arrivalTextBox.TabIndex = 6;
             arrivalTextBox.TextChanged += arrivalTextBox_TextChanged;
             // 
@@ -95,17 +100,19 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(346, 145);
+            label3.Location = new Point(242, 87);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(100, 41);
+            label3.Size = new Size(69, 28);
             label3.TabIndex = 7;
             label3.Text = "Arrival";
             // 
             // numberTicketsBox
             // 
-            numberTicketsBox.Location = new Point(647, 193);
+            numberTicketsBox.Location = new Point(453, 116);
+            numberTicketsBox.Margin = new Padding(2, 2, 2, 2);
             numberTicketsBox.Name = "numberTicketsBox";
-            numberTicketsBox.Size = new Size(205, 31);
+            numberTicketsBox.Size = new Size(145, 23);
             numberTicketsBox.TabIndex = 8;
             numberTicketsBox.TextChanged += numberTicketsBox_TextChanged;
             // 
@@ -113,18 +120,20 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(629, 135);
+            label4.Location = new Point(440, 81);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(261, 41);
+            label4.Size = new Size(171, 28);
             label4.TabIndex = 9;
             label4.Text = "Number of Tickets";
             // 
             // closeTabButton
             // 
             closeTabButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            closeTabButton.Location = new Point(907, 170);
+            closeTabButton.Location = new Point(635, 102);
+            closeTabButton.Margin = new Padding(2, 2, 2, 2);
             closeTabButton.Name = "closeTabButton";
-            closeTabButton.Size = new Size(197, 67);
+            closeTabButton.Size = new Size(138, 40);
             closeTabButton.TabIndex = 11;
             closeTabButton.Text = "Close tab";
             closeTabButton.UseVisualStyleBackColor = true;
@@ -134,9 +143,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Palatino Linotype", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 30);
+            label2.Location = new Point(8, 18);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(2080, 51);
+            label2.Size = new Size(1397, 35);
             label2.TabIndex = 12;
             label2.Text = "Enter the departure, the destination and the number of tickets you want to ride. Then input the given ID into the other form";
             // 
@@ -144,18 +154,19 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(1164, 183);
+            label5.Location = new Point(815, 110);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(282, 41);
+            label5.Size = new Size(185, 28);
             label5.TabIndex = 13;
             label5.Text = "Map of the stations:";
             // 
             // TrackSelector
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 200, 234);
-            ClientSize = new Size(2531, 1062);
+            ClientSize = new Size(1347, 637);
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(closeTabButton);
@@ -167,6 +178,7 @@
             Controls.Add(label1);
             Controls.Add(departureTextBox);
             Controls.Add(dataGridView);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "TrackSelector";
             Text = "TrackSelector";
             Load += Form_2_Load;

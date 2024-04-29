@@ -57,7 +57,7 @@ namespace MajorProject
             SqlConnection con = new SqlConnection(StaticData.conString);
             SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Tracks' AND COLUMN_NAME = Arrival ", con);
             DataView dv = resultTable.DefaultView;
-            dv.RowFilter = $"Arrival LIKE '%{departureTextBox.Text}%'";
+            dv.RowFilter = $"Arrival LIKE '%{arrivalTextBox.Text}%'";
             dataGridView.DataSource = resultTable;
             con.Open();
 

@@ -60,6 +60,29 @@ namespace MajorProject
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             if (count == 1)
             {
+                UserInfo.email = email;
+
+                query = "SELECT * FROM UserProfiles WHERE Email=@email";
+                cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                UserInfo.picture = StaticData.ByteArrayToImage((byte[])table.Rows[0]["Picture"]);
+                UserInfo.firstName = table.Rows[0]["Firstname"].ToString();
+                UserInfo.lastName = table.Rows[0]["Lastname"].ToString();
+                UserInfo.gender = table.Rows[0]["Sex"].ToString();
+
+                query = "SELECT * FROM Users WHERE Email=@email";
+                cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                table = new DataTable();
+                adapter.Fill(table);
+                UserInfo.username = table.Rows[0]["Username"].ToString();
+
                 TrackSelector myForm = new TrackSelector();
                 myForm.Show();
                 this.Hide();
