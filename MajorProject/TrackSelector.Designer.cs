@@ -128,6 +128,7 @@
             closeTabButton.TabIndex = 11;
             closeTabButton.Text = "Close tab";
             closeTabButton.UseVisualStyleBackColor = true;
+            closeTabButton.Click += closeTabButton_Click;
             // 
             // label2
             // 
