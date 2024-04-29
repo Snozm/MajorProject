@@ -96,13 +96,13 @@ namespace MajorProject
                 MessageBox.Show("Please enter a valid positive integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 numberOfTicketsTextBox.Clear();
                 return;
-            }      
-            
+            }
+
             if (remainingSeats < numberTickets)
             {
                 MessageBox.Show("You selected more tickets than there are seats left!");
                 numberTickets = 0;
-                numberOfTicketsTextBox.Text = ""; 
+                numberOfTicketsTextBox.Text = "";
                 numberOfTicketsTextBox.Focus();
 
             }
@@ -136,7 +136,7 @@ namespace MajorProject
         private void bookTicketsButton_Click(object sender, EventArgs e)
         {
 
-            if(numberTickets == 0 || selectedClass == "")
+            if (numberTickets == 0 || selectedClass == "")
             {
                 MessageBox.Show("Please enter the number of tickets and select a class.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -145,7 +145,7 @@ namespace MajorProject
             int newRemainingSeats = remainingSeats - numberTickets;
 
             SqlConnection con = new SqlConnection(StaticData.conString);
-            con.Open();       
+            con.Open();
             SqlCommand cmd = new SqlCommand("UPDATE Tracks SET remaining_seats = @newRemainingSeats WHERE Track_ID=@id", con);
             cmd.Parameters.AddWithValue("@id", trackID);
             cmd.Parameters.AddWithValue("@newRemainingSeats", newRemainingSeats);
