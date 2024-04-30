@@ -83,7 +83,7 @@ namespace MajorProject
                 adapter.Fill(table);
                 UserInfo.username = table.Rows[0]["Username"].ToString();
 
-                TrackSelector myForm = new TrackSelector();
+                SelectTrain myForm = new SelectTrain();
                 myForm.Show();
                 this.Hide();
                 return;

@@ -21,7 +21,6 @@ namespace MajorProject
         public SelectTrain()
         {
             InitializeComponent();
-            selectedClass = firstClassRadioButton.Text;
         }
 
         private void trackIDTextBox_TextChanged(object sender, EventArgs e)
@@ -112,27 +111,8 @@ namespace MajorProject
         {
             TrackSelector form = new TrackSelector();
             form.Show();
-
         }
 
-        private void classGroupBox_Enter(object sender, EventArgs e)
-        {
-            if (firstClassRadioButton.Checked)
-            {
-                selectedClass = firstClassRadioButton.Text;
-
-            }
-            else if (secondClassRadioButton.Checked)
-            {
-                selectedClass = secondClassRadioButton.Text;
-
-            }
-            else
-            {
-                selectedClass = economyClassRadioButton.Text;
-
-            }
-        }
         private void bookTicketsButton_Click(object sender, EventArgs e)
         {
 
@@ -153,6 +133,34 @@ namespace MajorProject
 
             UserBookingInformation form = new UserBookingInformation(trackID, selectedClass, numberTickets);
             form.Show();
+            this.Hide();
+        }
+
+        private void firstClassRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (firstClassRadioButton.Checked)
+            {
+                selectedClass = firstClassRadioButton.Text;
+
+            }
+        }
+
+        private void secondClassRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (secondClassRadioButton.Checked)
+            {
+                selectedClass = secondClassRadioButton.Text;
+
+            }
+        }
+
+        private void economyClassRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (economyClassRadioButton.Checked)
+            {
+                selectedClass = economyClassRadioButton.Text;
+
+            }
         }
     }
 }

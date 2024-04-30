@@ -19,3 +19,14 @@ insert into Tracks values('Andreshkonator300','Sofia','Pernik','2024-03-12 11:12
 ('Eva_Train2000','Sofia','Etropole','2024-03-12 11:12:13','2023-04-12 16:12:13',200,200),
 ('Eva_Train2000','Sofia','Svoge','2024-03-12 11:12:13','2023-04-12 16:12:13',200,200),
 ('VladiTrain','Sofia','Svoge','2024-03-12 11:12:13','2023-04-12 16:12:13',300,200)
+
+INSERT INTO Costs VALUES
+(1, '1st Class', 19.99),
+(1, '2nd Class', 14.99),
+(1, '1st Class', 9.99),
+(2, 'Economy Class', 29.99),
+(2, '2nd Class', 19.99),
+(2, 'Economy Class', 9.99),
+(3, '1st Class', 49.99),
+(3, '2nd Class', 29.99),
+(3, 'Economy Class', 9.99)

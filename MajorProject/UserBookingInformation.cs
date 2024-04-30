@@ -55,34 +55,9 @@ namespace MajorProject
                 return;
             }
 
-            string query = "INSERT INTO Tickets (Tr_ID, Holder_FirstName, Holder_LastName, specifics) VALUES (@TrackID, @FirstName, @LastName, @ClassSeat)";
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(StaticData.conString))
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        for (int i = 0; i < totalTickets; i++)
-                        {
-                            command.Parameters.Clear();
-                            command.Parameters.AddWithValue("@FirstName", firstNames[i]);
-                            command.Parameters.AddWithValue("@LastName", lastNames[i]);
-                            command.Parameters.AddWithValue("@ClassSeat", classSeat);
-                            command.Parameters.AddWithValue("@TrackID", track);
-
-                            command.ExecuteNonQuery();
-                        }
-                    }
-                }
-                MessageBox.Show("Names have been successfully recorded.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            Payment form = new Payment(track, classSeat, firstNames, lastNames, totalTickets);
+            form.Show();
+            this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

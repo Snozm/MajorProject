@@ -33,11 +33,15 @@ create table Tickets(
 	Ticket_ID int identity(1,1) primary key not null,
 	Tr_ID int,
 	constraint TID foreign key (Tr_ID) references Tracks(Track_ID),
-	cost float,
 	Holder_Firstname varchar(MAX),
 	Holder_Lastname varchar(MAX),
 	Seat_Num int,
-	specifics varchar(MAX)
+	Specifics varchar(MAX)
 )
 
-
+CREATE TABLE Costs(
+    Track_ID int,
+	CONSTRAINT TID2 FOREIGN KEY(Track_ID) references Tracks(Track_ID),
+	Specifics varchar(MAX),
+	Cost float
+)
