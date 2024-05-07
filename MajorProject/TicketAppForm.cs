@@ -16,6 +16,11 @@ namespace TicketApp
             LoadTicketInformation();
         }
 
+        private void InitializeComponent()
+        {
+
+        }
+
         private void LoadTicketInformation()
         {
             string connectionString = "ConnectionStringHere";

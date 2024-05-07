@@ -89,7 +89,7 @@
             // loginButton
             // 
             loginButton.BackColor = Color.DarkSlateGray;
-            loginButton.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.Font = new Font("Segoe UI", 19F, FontStyle.Bold, GraphicsUnit.Point);
             loginButton.ForeColor = Color.White;
             loginButton.Location = new Point(392, 408);
             loginButton.Name = "loginButton";
@@ -115,10 +115,10 @@
             registerButton.BackColor = Color.DarkSlateGray;
             registerButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             registerButton.ForeColor = Color.White;
-            registerButton.Location = new Point(758, 560);
+            registerButton.Location = new Point(758, 556);
             registerButton.Margin = new Padding(4, 5, 4, 5);
             registerButton.Name = "registerButton";
-            registerButton.Size = new Size(118, 41);
+            registerButton.Size = new Size(119, 44);
             registerButton.TabIndex = 31;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = false;
