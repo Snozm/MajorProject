@@ -174,7 +174,7 @@
             label6.Name = "label6";
             label6.Size = new Size(287, 46);
             label6.TabIndex = 14;
-            label6.Text = "Track Finder";
+            label6.Text = "TRACK FINDER";
             // 
             // TrackSelector
             // 

@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace TicketApp
+namespace MajorProject
 {
     public partial class TicketForm : Form
     {
@@ -18,11 +18,10 @@ namespace TicketApp
 
         private void LoadTicketInformation()
         {
-            string connectionString = "YourConnectionStringHere";
 
             string query = "SELECT * FROM Tickets";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(StaticData.conString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -33,13 +32,13 @@ namespace TicketApp
                     {
                         while (reader.Read())
                         {
-                            string firstName = reader["FirstName"].ToString();
-                            string lastName = reader["LastName"].ToString();
-                            string destination = reader["Destination"].ToString();
-                            string seat = reader["Seat"].ToString();
+                            string firstName = reader["Holder_Firstname"].ToString();
+                            string lastName = reader["Holder_Lastname"].ToString();
+                            //string destination = reader["Destination"].ToString();
+                            string seat = reader["Seat_Num"].ToString();
 
                             lblName.Text = firstName + " " + lastName;
-                            lblDestination.Text = "Destination: " + destination;
+                            //lblDestination.Text = "Destination: " + destination;
                             lblSeat.Text = "Seat: " + seat;
                         }
                     }

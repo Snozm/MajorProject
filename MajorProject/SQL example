@@ -1,0 +1,19 @@
+Create a new database named TicketDB
+CREATE DATABASE TicketDB;
+
+-- Switch to the new database
+USE TicketDB;
+
+-- Create a table named Tickets
+CREATE TABLE Tickets (
+    ID INT PRIMARY KEY IDENTITY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Destination VARCHAR(100),
+    Seat VARCHAR(10)
+);
+
+-- Insert data for three people into the Tickets table
+INSERT INTO Tickets (FirstName, LastName, Destination, Seat) VALUES ('John', 'Doe', 'New York', 'A1');
+INSERT INTO Tickets (FirstName, LastName, Destination, Seat) VALUES ('Jane', 'Smith', 'London', 'B2');
+INSERT INTO Tickets (FirstName, LastName, Destination, Seat) VALUES ('Michael', 'Johnson', 'Paris', 'C3');
