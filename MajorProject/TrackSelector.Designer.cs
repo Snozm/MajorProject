@@ -160,9 +160,9 @@
             label6.Font = new Font("Verdana", 28F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(1130, 47);
             label6.Name = "label6";
-            label6.Size = new Size(421, 67);
+            label6.Size = new Size(499, 67);
             label6.TabIndex = 14;
-            label6.Text = "Track Finder";
+            label6.Text = "TRACK FINDER";
             // 
             // TrackSelector
             // 

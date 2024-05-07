@@ -64,5 +64,10 @@ namespace MajorProject
         {
             this.Close();
         }
+
+        private void UserBookingInformation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

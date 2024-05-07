@@ -90,5 +90,10 @@ namespace MajorProject
             }
             MessageBox.Show("Wrong username or password entered");
         }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

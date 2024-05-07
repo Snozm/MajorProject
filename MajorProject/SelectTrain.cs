@@ -162,6 +162,11 @@ namespace MajorProject
 
             }
         }
+
+        private void SelectTrain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
