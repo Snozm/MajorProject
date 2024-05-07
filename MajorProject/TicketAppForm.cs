@@ -18,7 +18,7 @@ namespace TicketApp
 
         private void LoadTicketInformation()
         {
-            string connectionString = "YourConnectionStringHere";
+            string connectionString = "ConnectionStringHere";
 
             string query = "SELECT * FROM Tickets";
 
