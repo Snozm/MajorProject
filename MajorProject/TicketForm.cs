@@ -14,6 +14,12 @@ namespace MajorProject
         private void TicketForm_Load(object sender, EventArgs e)
         {
             LoadTicketInformation();
+            timer1.Start();
+        }
+
+        private void InitializeComponent()
+        {
+
         }
 
         private void LoadTicketInformation()
@@ -39,7 +45,6 @@ namespace MajorProject
 
                             lblName.Text = firstName + " " + lastName;
                             //lblDestination.Text = "Destination: " + destination;
-                            lblSeat.Text = "Seat: " + seat;
                         }
                     }
                     else
@@ -50,6 +55,16 @@ namespace MajorProject
                     reader.Close();
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

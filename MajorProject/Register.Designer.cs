@@ -162,9 +162,9 @@
             label4.Location = new Point(248, 17);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(343, 46);
+            label4.Size = new Size(564, 67);
             label4.TabIndex = 10;
-            label4.Text = "CREATE IMAGE";
+            label4.Text = "CREATE PROFILE";
             // 
             // label5
             // 
