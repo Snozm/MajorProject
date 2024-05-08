@@ -152,9 +152,9 @@
             label4.Font = new Font("Verdana", 28F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(355, 28);
             label4.Name = "label4";
-            label4.Size = new Size(500, 67);
+            label4.Size = new Size(564, 67);
             label4.TabIndex = 10;
-            label4.Text = "CREATE IMAGE";
+            label4.Text = "CREATE PROFILE";
             // 
             // label5
             // 
