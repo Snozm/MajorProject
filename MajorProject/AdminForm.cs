@@ -102,6 +102,11 @@ namespace MajorProject
         {
 
         }
+
+        private void CapacityTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

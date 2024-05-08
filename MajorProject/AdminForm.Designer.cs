@@ -89,11 +89,12 @@
             // 
             // CapacityTextBox
             // 
-            CapacityTextBox.Location = new Point(214, 602);
+            CapacityTextBox.Location = new Point(214, 596);
             CapacityTextBox.Margin = new Padding(4, 5, 4, 5);
             CapacityTextBox.Name = "CapacityTextBox";
             CapacityTextBox.Size = new Size(251, 31);
             CapacityTextBox.TabIndex = 5;
+            CapacityTextBox.TextChanged += CapacityTextBox_TextChanged;
             // 
             // label1
             // 
@@ -176,12 +177,13 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(58, 602);
+            label8.Location = new Point(58, 596);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(90, 25);
             label8.TabIndex = 13;
             label8.Text = "Capacity:";
+            label8.Click += this.label8_Click;
             // 
             // enterTrackButton
             // 
