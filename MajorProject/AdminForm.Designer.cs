@@ -43,6 +43,8 @@
             label7 = new Label();
             label8 = new Label();
             enterTrackButton = new Button();
+            label9 = new Label();
+            label10 = new Label();
             SuspendLayout();
             // 
             // trainNameTextBox
@@ -91,7 +93,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(89, 4);
+            label1.Location = new Point(91, 4);
             label1.Name = "label1";
             label1.Size = new Size(203, 72);
             label1.TabIndex = 6;
@@ -100,7 +102,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(274, 49);
+            label2.Location = new Point(260, 49);
             label2.Name = "label2";
             label2.Size = new Size(97, 15);
             label2.TabIndex = 7;
@@ -170,11 +172,33 @@
             enterTrackButton.UseVisualStyleBackColor = true;
             enterTrackButton.Click += button1_Click;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(286, 302);
+            label9.Name = "label9";
+            label9.RightToLeft = RightToLeft.No;
+            label9.Size = new Size(144, 15);
+            label9.TabIndex = 15;
+            label9.Text = "YYYY-MM-DD HH:MM:SS";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(286, 243);
+            label10.Name = "label10";
+            label10.RightToLeft = RightToLeft.No;
+            label10.Size = new Size(144, 15);
+            label10.TabIndex = 16;
+            label10.Text = "YYYY-MM-DD HH:MM:SS";
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(410, 450);
+            ClientSize = new Size(439, 450);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(enterTrackButton);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -213,5 +237,7 @@
         private Label label7;
         private Label label8;
         private Button enterTrackButton;
+        private Label label9;
+        private Label label10;
     }
 }
