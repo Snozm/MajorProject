@@ -17,59 +17,124 @@
 
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblDestination = new System.Windows.Forms.Label();
-            this.lblSeat = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketForm));
+            lblName = new Label();
+            lblDestination = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(35, 40);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(108, 20);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Ticket for: ?";
+            lblName.AutoSize = true;
+            lblName.BackColor = Color.Transparent;
+            lblName.Font = new Font("Blackadder ITC", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.ForeColor = Color.SaddleBrown;
+            lblName.Location = new Point(264, 110);
+            lblName.Margin = new Padding(6, 0, 6, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(97, 41);
+            lblName.TabIndex = 0;
+            lblName.Text = "Name:";
             // 
             // lblDestination
             // 
-            this.lblDestination.AutoSize = true;
-            this.lblDestination.Location = new System.Drawing.Point(35, 80);
-            this.lblDestination.Name = "lblDestination";
-            this.lblDestination.Size = new System.Drawing.Size(76, 13);
-            this.lblDestination.TabIndex = 1;
-            this.lblDestination.Text = "Destination: ?";
+            lblDestination.AutoSize = true;
+            lblDestination.BackColor = Color.Transparent;
+            lblDestination.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDestination.ForeColor = Color.SaddleBrown;
+            lblDestination.Location = new Point(264, 155);
+            lblDestination.Margin = new Padding(6, 0, 6, 0);
+            lblDestination.Name = "lblDestination";
+            lblDestination.Size = new Size(155, 41);
+            lblDestination.TabIndex = 1;
+            lblDestination.Text = "Destination:";
             // 
-            // lblSeat
+            // label1
             // 
-            this.lblSeat.AutoSize = true;
-            this.lblSeat.Location = new System.Drawing.Point(35, 120);
-            this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(47, 13);
-            this.lblSeat.TabIndex = 2;
-            this.lblSeat.Text = "Seat:  ?";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Old English Text MT", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(99, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(282, 57);
+            label1.TabIndex = 3;
+            label1.Text = "Train Ticket";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(99, 113);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 41);
+            label2.TabIndex = 4;
+            label2.Text = "Name:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(99, 157);
+            label3.Name = "label3";
+            label3.Size = new Size(155, 41);
+            label3.TabIndex = 5;
+            label3.Text = "Destination:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.unnamed;
+            pictureBox1.Location = new Point(389, 212);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 100);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // TicketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
-            this.Controls.Add(this.lblSeat);
-            this.Controls.Add(this.lblDestination);
-            this.Controls.Add(this.lblName);
-            this.Name = "TicketForm";
-            this.Text = "Ticket";
-            this.Load += new System.EventHandler(this.TicketForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(881, 342);
+            Controls.Add(pictureBox1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(lblDestination);
+            Controls.Add(lblName);
+            Margin = new Padding(6, 7, 6, 7);
+            Name = "TicketForm";
+            Text = "Ticket";
+            Load += TicketForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblDestination;
-        private System.Windows.Forms.Label lblSeat;
+        private Label lblName;
+        private Label lblDestination;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
