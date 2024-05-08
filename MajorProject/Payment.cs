@@ -195,7 +195,7 @@ namespace MajorProject
         }
         private bool validatePhoneNumber()
         {
-            if(!int.TryParse(phoneNumberTextBox.Text, out int a) || phoneNumberTextBox.Text.Length != 10)
+            if(!Int64.TryParse(phoneNumberTextBox.Text, out long a) || phoneNumberTextBox.Text.Length != 10)
             {
                 return false;
             }

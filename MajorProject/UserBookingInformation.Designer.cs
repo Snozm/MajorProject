@@ -41,9 +41,10 @@
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            firstNameLabel.Location = new Point(39, 118);
+            firstNameLabel.Location = new Point(27, 71);
+            firstNameLabel.Margin = new Padding(2, 0, 2, 0);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(144, 32);
+            firstNameLabel.Size = new Size(96, 21);
             firstNameLabel.TabIndex = 0;
             firstNameLabel.Text = "First Name:";
             // 
@@ -51,9 +52,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lastNameLabel.Location = new Point(39, 177);
+            lastNameLabel.Location = new Point(27, 106);
+            lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(140, 32);
+            lastNameLabel.Size = new Size(94, 21);
             lastNameLabel.TabIndex = 1;
             lastNameLabel.Text = "Last Name:";
             // 
@@ -61,35 +63,39 @@
             // 
             travelerInformationLabel.AutoSize = true;
             travelerInformationLabel.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            travelerInformationLabel.Location = new Point(93, 29);
+            travelerInformationLabel.Location = new Point(65, 17);
+            travelerInformationLabel.Margin = new Padding(2, 0, 2, 0);
             travelerInformationLabel.Name = "travelerInformationLabel";
-            travelerInformationLabel.Size = new Size(439, 34);
+            travelerInformationLabel.Size = new Size(297, 23);
             travelerInformationLabel.TabIndex = 2;
             travelerInformationLabel.Text = "TRAVELLER INFORMATION";
             // 
             // firstNameTextBox
             // 
-            firstNameTextBox.Location = new Point(221, 118);
+            firstNameTextBox.Location = new Point(155, 71);
+            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
             firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(308, 31);
-            firstNameTextBox.TabIndex = 3;
+            firstNameTextBox.Size = new Size(217, 23);
+            firstNameTextBox.TabIndex = 0;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(221, 177);
+            lastNameTextBox.Location = new Point(155, 106);
+            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(308, 31);
-            lastNameTextBox.TabIndex = 4;
+            lastNameTextBox.Size = new Size(217, 23);
+            lastNameTextBox.TabIndex = 1;
             // 
             // saveButton
             // 
             saveButton.BackColor = Color.CadetBlue;
             saveButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             saveButton.ForeColor = SystemColors.ButtonHighlight;
-            saveButton.Location = new Point(221, 233);
+            saveButton.Location = new Point(155, 140);
+            saveButton.Margin = new Padding(2, 2, 2, 2);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(139, 48);
-            saveButton.TabIndex = 5;
+            saveButton.Size = new Size(97, 29);
+            saveButton.TabIndex = 2;
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = false;
             saveButton.Click += saveButton_Click;
@@ -99,20 +105,21 @@
             cancelButton.BackColor = Color.CadetBlue;
             cancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = SystemColors.ButtonHighlight;
-            cancelButton.Location = new Point(393, 233);
+            cancelButton.Location = new Point(275, 140);
+            cancelButton.Margin = new Padding(2, 2, 2, 2);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(139, 48);
-            cancelButton.TabIndex = 6;
+            cancelButton.Size = new Size(97, 29);
+            cancelButton.TabIndex = 3;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = false;
             cancelButton.Click += cancelButton_Click;
             // 
             // UserBookingInformation
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PowderBlue;
-            ClientSize = new Size(629, 307);
+            ClientSize = new Size(440, 184);
             Controls.Add(cancelButton);
             Controls.Add(saveButton);
             Controls.Add(lastNameTextBox);
@@ -120,6 +127,7 @@
             Controls.Add(travelerInformationLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(firstNameLabel);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserBookingInformation";
             Text = "UserBookingInformation";
             Load += UserBookingInformation_Load;

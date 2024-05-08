@@ -17,53 +17,56 @@
 
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblDestination = new System.Windows.Forms.Label();
-            this.lblSeat = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            lblName = new Label();
+            lblDestination = new Label();
+            lblSeat = new Label();
+            SuspendLayout();
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(35, 40);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(108, 20);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Ticket for: ?";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.Location = new Point(41, 46);
+            lblName.Margin = new Padding(4, 0, 4, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(104, 20);
+            lblName.TabIndex = 0;
+            lblName.Text = "Ticket for: ?";
             // 
             // lblDestination
             // 
-            this.lblDestination.AutoSize = true;
-            this.lblDestination.Location = new System.Drawing.Point(35, 80);
-            this.lblDestination.Name = "lblDestination";
-            this.lblDestination.Size = new System.Drawing.Size(76, 13);
-            this.lblDestination.TabIndex = 1;
-            this.lblDestination.Text = "Destination: ?";
+            lblDestination.AutoSize = true;
+            lblDestination.Location = new Point(41, 92);
+            lblDestination.Margin = new Padding(4, 0, 4, 0);
+            lblDestination.Name = "lblDestination";
+            lblDestination.Size = new Size(78, 15);
+            lblDestination.TabIndex = 1;
+            lblDestination.Text = "Destination: ?";
             // 
             // lblSeat
             // 
-            this.lblSeat.AutoSize = true;
-            this.lblSeat.Location = new System.Drawing.Point(35, 120);
-            this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(47, 13);
-            this.lblSeat.TabIndex = 2;
-            this.lblSeat.Text = "Seat:  ?";
+            lblSeat.AutoSize = true;
+            lblSeat.Location = new Point(41, 133);
+            lblSeat.Margin = new Padding(4, 0, 4, 0);
+            lblSeat.Name = "lblSeat";
+            lblSeat.Size = new Size(43, 15);
+            lblSeat.TabIndex = 2;
+            lblSeat.Text = "Seat:  ?";
             // 
             // TicketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
-            this.Controls.Add(this.lblSeat);
-            this.Controls.Add(this.lblDestination);
-            this.Controls.Add(this.lblName);
-            this.Name = "TicketForm";
-            this.Text = "Ticket";
-            this.Load += new System.EventHandler(this.TicketForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(331, 186);
+            Controls.Add(lblSeat);
+            Controls.Add(lblDestination);
+            Controls.Add(lblName);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "TicketForm";
+            Text = "Ticket";
+            Load += TicketForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
