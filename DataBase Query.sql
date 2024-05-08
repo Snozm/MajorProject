@@ -35,7 +35,7 @@ create table Tickets(
 	constraint TID foreign key (Tr_ID) references Tracks(Track_ID),
 	Holder_Firstname varchar(MAX),
 	Holder_Lastname varchar(MAX),
-	Seat_Num int,
+	Seat_Num varchar(MAX),
 	Specifics varchar(MAX)
 )
 
