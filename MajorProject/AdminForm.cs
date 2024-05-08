@@ -26,8 +26,11 @@ namespace MajorProject
 
             bool DepTimeCheck = CheckFormat(DepTime);
             bool ArrTimeCheck = CheckFormat(ArrTime);
-
-            if (DepTimeCheck & ArrTimeCheck)
+            if (trainNameTextBox.Text == "" | DepartureCitytextBox.Text == "" | ArrivalCityTextBox.Text == "" | DepartureTimeTextBox.Text == "" | ArrivalTimeTextBox.Text == "" |  CapacityTextBox.Text == "")
+            {
+                MessageBox.Show("You didn't enter something in");
+            }
+           else if (DepTimeCheck & ArrTimeCheck)
             {
                 Int32.TryParse(CapacityTextBox.Text, out int capacity);
                 string query = "INSERT INTO Tracks VALUES (@TrainName, @Dep, @Arr, @DepTime,@ArrTime, @Capacity, @Remaining_Seats)";
@@ -66,7 +69,7 @@ namespace MajorProject
             }
             else
             {
-                MessageBox.Show("Invalid time");
+                MessageBox.Show("Invalid input");
             }
         }
         static bool CheckFormat(string input)
