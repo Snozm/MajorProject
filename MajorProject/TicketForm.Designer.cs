@@ -33,12 +33,11 @@
             // 
             lblName.AutoSize = true;
             lblName.BackColor = Color.Transparent;
-            lblName.Font = new Font("Blackadder ITC", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblName.ForeColor = Color.SaddleBrown;
-            lblName.Location = new Point(264, 110);
-            lblName.Margin = new Padding(6, 0, 6, 0);
+            lblName.Location = new Point(142, 52);
             lblName.Name = "lblName";
-            lblName.Size = new Size(97, 41);
+            lblName.Size = new Size(60, 20);
             lblName.TabIndex = 0;
             lblName.Text = "Name:";
             // 
@@ -46,12 +45,11 @@
             // 
             lblDestination.AutoSize = true;
             lblDestination.BackColor = Color.Transparent;
-            lblDestination.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDestination.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblDestination.ForeColor = Color.SaddleBrown;
-            lblDestination.Location = new Point(264, 155);
-            lblDestination.Margin = new Padding(6, 0, 6, 0);
+            lblDestination.Location = new Point(142, 73);
             lblDestination.Name = "lblDestination";
-            lblDestination.Size = new Size(155, 41);
+            lblDestination.Size = new Size(94, 20);
             lblDestination.TabIndex = 1;
             lblDestination.Text = "Destination:";
             // 
@@ -59,10 +57,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Old English Text MT", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(99, 41);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(53, 19);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(282, 57);
+            label1.Size = new Size(141, 29);
             label1.TabIndex = 3;
             label1.Text = "Train Ticket";
             // 
@@ -70,11 +69,12 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(99, 113);
+            label2.Location = new Point(53, 53);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(92, 41);
+            label2.Size = new Size(55, 20);
             label2.TabIndex = 4;
             label2.Text = "Name:";
             // 
@@ -82,11 +82,12 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Blackadder ITC", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(99, 157);
+            label3.Location = new Point(53, 74);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(155, 41);
+            label3.Size = new Size(94, 20);
             label3.TabIndex = 5;
             label3.Text = "Destination:";
             // 
@@ -94,9 +95,12 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.unnamed;
-            pictureBox1.Location = new Point(389, 212);
+            pictureBox1.Image = Properties.Resources.unnamed;
+            pictureBox1.Location = new Point(209, 99);
+            pictureBox1.Margin = new Padding(2, 1, 2, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 100);
+            pictureBox1.Size = new Size(108, 47);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -107,18 +111,18 @@
             // 
             // TicketForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(881, 342);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(474, 160);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lblDestination);
             Controls.Add(lblName);
-            Margin = new Padding(6, 7, 6, 7);
             Name = "TicketForm";
             Text = "Ticket";
             Load += TicketForm_Load;
