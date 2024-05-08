@@ -183,7 +183,6 @@
             label8.Size = new Size(90, 25);
             label8.TabIndex = 13;
             label8.Text = "Capacity:";
-            label8.Click += this.label8_Click;
             // 
             // enterTrackButton
             // 
