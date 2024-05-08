@@ -12,6 +12,9 @@ namespace MajorProject
             InitializeComponent();
         }
 
+        string adminemail = "admin@admin.com";
+        string adminpassword = "ilovecookies";
+
         private void registerButton_Click(object sender, EventArgs e)
         {
             Register register = new Register();
@@ -94,6 +97,19 @@ namespace MajorProject
         private void HomePage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if ((emailTextBox.Text == adminemail) && (passwordTextBox.Text == adminpassword))
+            {
+                AdminForm adm = new AdminForm();
+                adm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Admin details");
+            }
         }
     }
 }

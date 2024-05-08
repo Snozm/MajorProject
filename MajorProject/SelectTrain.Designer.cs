@@ -172,7 +172,7 @@
             // selectTrackLabel
             // 
             selectTrackLabel.AutoSize = true;
-            selectTrackLabel.Location = new Point(264, 255);
+            selectTrackLabel.Location = new Point(268, 254);
             selectTrackLabel.Margin = new Padding(4, 0, 4, 0);
             selectTrackLabel.Name = "selectTrackLabel";
             selectTrackLabel.Size = new Size(141, 25);
@@ -182,7 +182,7 @@
             // selectTrackLabel2
             // 
             selectTrackLabel2.AutoSize = true;
-            selectTrackLabel2.Location = new Point(307, 412);
+            selectTrackLabel2.Location = new Point(321, 412);
             selectTrackLabel2.Margin = new Padding(4, 0, 4, 0);
             selectTrackLabel2.Name = "selectTrackLabel2";
             selectTrackLabel2.Size = new Size(141, 25);
@@ -194,7 +194,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PowderBlue;
-            ClientSize = new Size(800, 567);
+            ClientSize = new Size(800, 529);
             Controls.Add(selectTrackLabel2);
             Controls.Add(selectTrackLabel);
             Controls.Add(bookTicketsButton);

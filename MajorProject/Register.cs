@@ -85,15 +85,15 @@ namespace MajorProject
             string hash = StaticData.hashPassword($"{passwordTextBox.Text}{salt}");
             SqlConnection con = new SqlConnection(StaticData.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email=@email", con);
-            cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
-            if (Convert.ToInt32(cmd.ExecuteScalar()) != 0)
+            SqlCommand EmailCheckingCommand = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email=@email", con);
+            EmailCheckingCommand.Parameters.AddWithValue("@email", usernameTextBox.Text);
+            if (Convert.ToInt32(EmailCheckingCommand.ExecuteScalar()) != 0)
             {
                 MessageBox.Show("User already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 con.Close();
                 return;
             }
-            cmd = new SqlCommand("INSERT INTO Users VALUES(@email, @username, @hash, @date, 0)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Users VALUES(@email, @username, @hash, @date, 0)", con);
             cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
             cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
             cmd.Parameters.AddWithValue("@hash", hash);

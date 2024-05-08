@@ -17,6 +17,11 @@ namespace MajorProject
             timer1.Start();
         }
 
+        private void InitializeComponent()
+        {
+
+        }
+
         private void LoadTicketInformation()
         {
 
