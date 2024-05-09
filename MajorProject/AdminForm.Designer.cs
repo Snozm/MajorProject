@@ -178,7 +178,7 @@
             enterTrackButton.Location = new Point(9, 407);
             enterTrackButton.Name = "enterTrackButton";
             enterTrackButton.Size = new Size(512, 45);
-            enterTrackButton.TabIndex = 14;
+            enterTrackButton.TabIndex = 6;
             enterTrackButton.Text = "Add Track";
             enterTrackButton.UseVisualStyleBackColor = false;
             enterTrackButton.Click += button1_Click;
