@@ -18,9 +18,12 @@ namespace MajorProject
         int numberTickets = 0;
         int remainingSeats = 0;
         int trackID = 0;
-        public SelectTrain()
+        UserInfo user;
+        public SelectTrain(UserInfo userInfo)
         {
+            user = userInfo;
             InitializeComponent();
+            this.Text = user.username;
         }
 
         private void trackIDTextBox_TextChanged(object sender, EventArgs e)
@@ -109,7 +112,7 @@ namespace MajorProject
 
         private void searchTracksButton_Click(object sender, EventArgs e)
         {
-            TrackSelector form = new TrackSelector();
+            TrackSelector form = new TrackSelector(user);
             form.Show();
         }
 
@@ -131,7 +134,7 @@ namespace MajorProject
             cmd.Parameters.AddWithValue("@newRemainingSeats", newRemainingSeats);
             con.Close();
 
-            UserBookingInformation form = new UserBookingInformation(trackID, selectedClass, numberTickets);
+            UserBookingInformation form = new UserBookingInformation(user, trackID, selectedClass, numberTickets);
             form.Show();
             this.Hide();
         }

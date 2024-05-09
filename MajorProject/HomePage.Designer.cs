@@ -37,7 +37,6 @@
             label3 = new Label();
             registerButton = new Button();
             showPasswordPictureBox = new PictureBox();
-            enterAsAdminButton = new Button();
             ((System.ComponentModel.ISupportInitialize)showPasswordPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -98,7 +97,7 @@
             loginButton.Location = new Point(274, 245);
             loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(186, 43);
+            loginButton.Size = new Size(186, 49);
             loginButton.TabIndex = 29;
             loginButton.Text = "Log In";
             loginButton.UseVisualStyleBackColor = false;
@@ -108,7 +107,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(202, 338);
+            label3.Location = new Point(163, 327);
             label3.Name = "label3";
             label3.Size = new Size(323, 19);
             label3.TabIndex = 30;
@@ -119,10 +118,10 @@
             registerButton.BackColor = Color.DarkSlateGray;
             registerButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             registerButton.ForeColor = Color.White;
-            registerButton.Location = new Point(758, 556);
+            registerButton.Location = new Point(493, 321);
             registerButton.Margin = new Padding(4, 5, 4, 5);
             registerButton.Name = "registerButton";
-            registerButton.Size = new Size(119, 44);
+            registerButton.Size = new Size(95, 29);
             registerButton.TabIndex = 31;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = false;
@@ -140,27 +139,12 @@
             showPasswordPictureBox.TabStop = false;
             showPasswordPictureBox.Click += showPasswordPictureBox_Click;
             // 
-            // enterAsAdminButton
-            // 
-            enterAsAdminButton.BackColor = Color.DarkSlateGray;
-            enterAsAdminButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            enterAsAdminButton.ForeColor = Color.White;
-            enterAsAdminButton.Location = new Point(274, 292);
-            enterAsAdminButton.Margin = new Padding(2);
-            enterAsAdminButton.Name = "enterAsAdminButton";
-            enterAsAdminButton.Size = new Size(186, 37);
-            enterAsAdminButton.TabIndex = 33;
-            enterAsAdminButton.Text = "Enter as Admin";
-            enterAsAdminButton.UseVisualStyleBackColor = false;
-            enterAsAdminButton.Click += button1_Click;
-            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PowderBlue;
-            ClientSize = new Size(800, 413);
-            Controls.Add(enterAsAdminButton);
+            ClientSize = new Size(722, 394);
             Controls.Add(showPasswordPictureBox);
             Controls.Add(registerButton);
             Controls.Add(label3);
@@ -191,6 +175,5 @@
         private Label label3;
         private Button registerButton;
         private PictureBox showPasswordPictureBox;
-        private Button enterAsAdminButton;
     }
 }

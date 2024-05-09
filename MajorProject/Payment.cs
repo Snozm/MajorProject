@@ -19,9 +19,12 @@ namespace MajorProject
         string[] firstNames;
         string[] lastNames;
         int totalTickets;
-        public Payment(int trackID, string classN, string[] first, string[] last, int tickets)
+        UserInfo user;
+        public Payment(UserInfo userInfo, int trackID, string classN, string[] first, string[] last, int tickets)
         {
+            user = userInfo;
             InitializeComponent();
+            this.Text = user.username;
             track = trackID;
             classSeat = classN;
             firstNames = first;
@@ -89,6 +92,9 @@ namespace MajorProject
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        SqlCommand cmd = new SqlCommand("SELECT Arrival FROM Tracks WHERE Track_ID = @trackID", connection);
+                        cmd.Parameters.AddWithValue("@trackID", track);
+                        string destination = (string)cmd.ExecuteScalar();
                         for (int i = 0; i < totalTickets; i++)
                         {
                             command.Parameters.Clear();
@@ -98,9 +104,11 @@ namespace MajorProject
                             command.Parameters.AddWithValue("@TrackID", track);
 
                             command.ExecuteNonQuery();
+                            TicketForm form = new TicketForm(firstNames[i], lastNames[i], destination);
+                            form.Show();
                         }
 
-                        SqlCommand cmd = new SqlCommand("UPDATE Tracks SET remaining_seats = ((SELECT remaining_seats FROM Tracks WHERE Track_ID=@trackID) - @totalTickets) WHERE Track_ID = @trackID", connection);
+                        cmd = new SqlCommand("UPDATE Tracks SET remaining_seats = ((SELECT remaining_seats FROM Tracks WHERE Track_ID=@trackID) - @totalTickets) WHERE Track_ID = @trackID", connection);
                         cmd.Parameters.AddWithValue("@trackID", track);
                         cmd.Parameters.AddWithValue("@totalTickets", totalTickets);
                         cmd.ExecuteNonQuery();

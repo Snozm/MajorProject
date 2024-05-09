@@ -73,7 +73,7 @@
             // firstNameTextBox
             // 
             firstNameTextBox.Location = new Point(155, 71);
-            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            firstNameTextBox.Margin = new Padding(2);
             firstNameTextBox.Name = "firstNameTextBox";
             firstNameTextBox.Size = new Size(217, 23);
             firstNameTextBox.TabIndex = 0;
@@ -81,18 +81,18 @@
             // lastNameTextBox
             // 
             lastNameTextBox.Location = new Point(155, 106);
-            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            lastNameTextBox.Margin = new Padding(2);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(217, 23);
             lastNameTextBox.TabIndex = 1;
             // 
             // saveButton
             // 
-            saveButton.BackColor = Color.CadetBlue;
+            saveButton.BackColor = Color.DarkSlateGray;
             saveButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             saveButton.ForeColor = SystemColors.ButtonHighlight;
             saveButton.Location = new Point(155, 140);
-            saveButton.Margin = new Padding(2, 2, 2, 2);
+            saveButton.Margin = new Padding(2);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(97, 29);
             saveButton.TabIndex = 2;
@@ -102,11 +102,11 @@
             // 
             // cancelButton
             // 
-            cancelButton.BackColor = Color.CadetBlue;
+            cancelButton.BackColor = Color.DarkSlateGray;
             cancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.ForeColor = SystemColors.ButtonHighlight;
             cancelButton.Location = new Point(275, 140);
-            cancelButton.Margin = new Padding(2, 2, 2, 2);
+            cancelButton.Margin = new Padding(2);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(97, 29);
             cancelButton.TabIndex = 3;
@@ -127,7 +127,7 @@
             Controls.Add(travelerInformationLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(firstNameLabel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserBookingInformation";
             Text = "UserBookingInformation";
             Load += UserBookingInformation_Load;

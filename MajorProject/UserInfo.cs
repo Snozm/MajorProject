@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace MajorProject
 {
-    internal class UserInfo
+    public class UserInfo
     {
-        public static string email;
-        public static string username;
-        public static Image picture;
-        public static string firstName;
-        public static string lastName;
-        public static string gender;
+        public string email;
+        public string username;
+        public Image picture;
+        public string firstName;
+        public string lastName;
+        public string gender;
+        public string role;
+        public UserInfo(string email, string username, Image picture, string firstName, string lastName, string gender, string role)
+        {
+            this.email = email;
+            this.username = username;
+            this.picture = picture;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.gender = gender;
+            this.role = role;
+        }
     }
 }

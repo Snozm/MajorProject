@@ -19,11 +19,14 @@ namespace MajorProject
         int totalTickets;
         string[] firstNames;
         string[] lastNames;
-        public UserBookingInformation(int trackID, string classN, int tickets)
+        UserInfo user;
+        public UserBookingInformation(UserInfo userInfo, int trackID, string classN, int tickets)
         {
             track = trackID;
             classSeat = classN;
+            user = userInfo;
             InitializeComponent();
+            this.Text = user.username;
             travelerInformationLabel.Text += $" {ticketNo}";
             totalTickets = tickets;
             firstNames = new string[totalTickets];
@@ -55,7 +58,7 @@ namespace MajorProject
                 return;
             }
 
-            Payment form = new Payment(track, classSeat, firstNames, lastNames, totalTickets);
+            Payment form = new Payment(user, track, classSeat, firstNames, lastNames, totalTickets);
             form.Show();
             this.Close();
         }

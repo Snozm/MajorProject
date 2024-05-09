@@ -12,9 +12,6 @@ namespace MajorProject
             InitializeComponent();
         }
 
-        string adminemail = "admin@admin.com";
-        string adminpassword = "ilovecookies";
-
         private void registerButton_Click(object sender, EventArgs e)
         {
             Register register = new Register();
@@ -63,8 +60,6 @@ namespace MajorProject
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             if (count == 1)
             {
-                UserInfo.email = email;
-
                 query = "SELECT * FROM UserProfiles WHERE Email=@email";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
@@ -72,10 +67,10 @@ namespace MajorProject
                 adapter.SelectCommand = cmd;
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                UserInfo.picture = StaticData.ByteArrayToImage((byte[])table.Rows[0]["Picture"]);
-                UserInfo.firstName = table.Rows[0]["Firstname"].ToString();
-                UserInfo.lastName = table.Rows[0]["Lastname"].ToString();
-                UserInfo.gender = table.Rows[0]["Sex"].ToString();
+                Image picture = StaticData.ByteArrayToImage((byte[])table.Rows[0]["Picture"]);
+                string firstName = table.Rows[0]["Firstname"].ToString();
+                string lastName = table.Rows[0]["Lastname"].ToString();
+                string gender = table.Rows[0]["Sex"].ToString();
 
                 query = "SELECT * FROM Users WHERE Email=@email";
                 cmd = new SqlCommand(query, con);
@@ -84,9 +79,20 @@ namespace MajorProject
                 adapter.SelectCommand = cmd;
                 table = new DataTable();
                 adapter.Fill(table);
-                UserInfo.username = table.Rows[0]["Username"].ToString();
-
-                SelectTrain myForm = new SelectTrain();
+                string username = table.Rows[0]["Username"].ToString();
+                string role = "user";
+                UserInfo user;
+                if ((bool)table.Rows[0]["Admin"] == true)
+                {
+                    role = "admin";
+                    user = new UserInfo(email, username, picture, firstName, lastName, gender, role);
+                    AdminForm adm = new AdminForm();
+                    adm.Show();
+                    this.Hide();
+                    return;
+                }
+                user = new UserInfo(email, username, picture, firstName, lastName, gender, role);
+                SelectTrain myForm = new SelectTrain(user);
                 myForm.Show();
                 this.Hide();
                 return;
@@ -97,19 +103,6 @@ namespace MajorProject
         private void HomePage_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if ((emailTextBox.Text == adminemail) && (passwordTextBox.Text == adminpassword))
-            {
-                AdminForm adm = new AdminForm();
-                adm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Admin details");
-            }
         }
     }
 }

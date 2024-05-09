@@ -59,7 +59,8 @@ namespace MajorProject
                 MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!emailTextBox.Text.Contains("@"))
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(emailTextBox.Text, pattern))
             {
                 MessageBox.Show("Invalid email entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -69,7 +70,7 @@ namespace MajorProject
                 MessageBox.Show("Password needs to be at least 8 characters long", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%_&?*])[A-Za-z0-9!@#$%_&?*]{8,}$";
+            pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%_&?*])[A-Za-z0-9!@#$%_&?*]{8,}$";
             if (!Regex.IsMatch(passwordTextBox.Text, pattern))
             {
                 MessageBox.Show("Password needs more special characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

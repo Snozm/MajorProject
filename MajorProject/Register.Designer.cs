@@ -162,7 +162,7 @@
             label4.Location = new Point(248, 17);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(564, 67);
+            label4.Size = new Size(385, 46);
             label4.TabIndex = 10;
             label4.Text = "CREATE PROFILE";
             // 
@@ -300,9 +300,9 @@
             changeImageButton.BackColor = Color.DarkSlateGray;
             changeImageButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             changeImageButton.ForeColor = SystemColors.ButtonHighlight;
-            changeImageButton.Location = new Point(700, 369);
+            changeImageButton.Location = new Point(700, 365);
             changeImageButton.Name = "changeImageButton";
-            changeImageButton.Size = new Size(104, 23);
+            changeImageButton.Size = new Size(104, 27);
             changeImageButton.TabIndex = 9;
             changeImageButton.Text = "Change Image";
             changeImageButton.UseVisualStyleBackColor = false;

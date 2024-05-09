@@ -16,9 +16,12 @@ namespace MajorProject
     public partial class TrackSelector : Form
     {
         DataTable resultTable = new DataTable();
-        public TrackSelector()
+        UserInfo user;
+        public TrackSelector(UserInfo userInfo)
         {
+            user = userInfo;
             InitializeComponent();
+            this.Text = user.username;
         }
 
 

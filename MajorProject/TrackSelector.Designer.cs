@@ -131,7 +131,7 @@
             // closeTabButton
             // 
             closeTabButton.BackColor = Color.DarkSlateGray;
-            closeTabButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            closeTabButton.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             closeTabButton.ForeColor = SystemColors.ButtonHighlight;
             closeTabButton.Location = new Point(1095, 745);
             closeTabButton.Margin = new Padding(2);

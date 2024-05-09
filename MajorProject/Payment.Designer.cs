@@ -286,7 +286,7 @@
             payButton.ForeColor = SystemColors.ButtonHighlight;
             payButton.Location = new Point(86, 390);
             payButton.Name = "payButton";
-            payButton.Size = new Size(444, 28);
+            payButton.Size = new Size(444, 41);
             payButton.TabIndex = 12;
             payButton.Text = "Continue";
             payButton.UseVisualStyleBackColor = false;
