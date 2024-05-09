@@ -20,7 +20,7 @@ namespace MajorProject
         private void TicketForm_Load(object sender, EventArgs e)
         {
             lblName.Text = firstName + " " + lastName;
-            lblDestination.Text = "Destination: " + destination;
+            lblDestination.Text = destination;
             timer1.Start();
         }
 

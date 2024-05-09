@@ -88,7 +88,6 @@ namespace MajorProject
                     user = new UserInfo(email, username, picture, firstName, lastName, gender, role);
                     AdminForm adm = new AdminForm();
                     adm.Show();
-                    this.Hide();
                     return;
                 }
                 user = new UserInfo(email, username, picture, firstName, lastName, gender, role);

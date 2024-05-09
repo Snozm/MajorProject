@@ -56,9 +56,8 @@ namespace MajorProject
 
                 SqlCommand getId = new SqlCommand("Select max(Track_ID) from Tracks", connection);
                 int latestId = Convert.ToInt32(getId.ExecuteScalar());
-                MessageBox.Show($"{latestId}");
 
-                string addingcostsquery = "Insert into Costs values (@ID, 'first class', '19.19'), (@ID, 'second class','14.99'), (@ID, 'third class', '9.99')";
+                string addingcostsquery = "Insert into Costs values (@ID, '1st Class', '19.19'), (@ID, '2nd Class','14.99'), (@ID, 'Economy Class', '9.99')";
                 SqlCommand addCosts = new SqlCommand(addingcostsquery, connection);
                 addCosts.Parameters.AddWithValue("@ID", latestId);
                 addCosts.ExecuteNonQuery();
